@@ -1,0 +1,303 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; }
+
+#body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-family: "Josefin Sans", sans-serif;
+  background-image: url(https://images.unsplash.com/photo-1528731708534-816fe59f90cb?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80);
+  background-position: top;
+  background-repeat: no-repeat;
+  background-size: cover; }
+
+#content-wrapper {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-areas: "nav nav nav nav " "text text img img" "img1 img1 text1 text1";
+  padding: 2rem;
+  background: white;
+  max-width: 60rem;
+  height: 800px;
+  text-align: justify; }
+  #content-wrapper nav {
+    grid-area: nav; }
+  #content-wrapper #person1 {
+    grid-area: text;
+    padding: 2rem; }
+  #content-wrapper #aside1 {
+    grid-area: img;
+    margin: 1rem;
+    background-image: url(https://images.unsplash.com/photo-1534119768988-c496213eff76?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=80);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat; }
+  #content-wrapper #person2 {
+    grid-area: text1;
+    padding: 2rem; }
+  #content-wrapper #aside2 {
+    grid-area: img1;
+    margin: 1rem;
+    background-image: url(https://images.unsplash.com/photo-1530522238647-b1b7e1789c39?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80);
+    background-size: cover;
+    background-position: top;
+    background-repeat: no-repeat; }
+
+@media (max-width: 40rem) {
+  #content-wrapper {
+    height: 100vh;
+    grid-template-rows: 1fr 1fr 300px 300px 1fr;
+    grid-template-areas: "nav nav nav nav" "text text text text " "img img img img" "img1 img1 img1 img1" "text1 text1 text1 text1"; } }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; }
+
+#gallery-body {
+  padding: 5rem;
+  text-align: justify; }
+
+.title {
+  text-align: center;
+  font-size: 60px;
+  grid-column: 1 / 13;
+  grid-row: 2/3;
+  grid-area: title; }
+
+nav {
+  grid-area: nav;
+  background: white; }
+  nav .nav-list {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 80px;
+    list-style-type: none; }
+    nav .nav-list .nav-item a {
+      text-decoration: none;
+      color: black;
+      cursor: pointer; }
+
+.gallery-content {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-auto-rows: minmax(150px, auto);
+  /* row height*/
+  grid-template-areas: "title title title title title title title title title title title title" "nav nav nav nav nav nav nav nav nav nav nav nav ";
+  grid-gap: 20px;
+  max-width: 960px;
+  margin: 0 auto; }
+  .gallery-content .title {
+    grid-area: title; }
+  .gallery-content nav {
+    grid-area: nav; }
+  .gallery-content .one {
+    grid-column: 1 / 6;
+    grid-row: 3/6;
+    background-image: url(https://images.unsplash.com/photo-1490227443806-2b4ed1f6916b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=675&q=80);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat; }
+  .gallery-content .two {
+    grid-column: 6 / 13;
+    grid-row: 3/5;
+    padding: 1rem; }
+    .gallery-content .two h3 {
+      margin-top: 1.5rem;
+      font-size: 30px;
+      font-weight: bolder; }
+  .gallery-content .three {
+    grid-column: 6 / 11;
+    grid-row: 5/6;
+    padding: 1rem; }
+  .gallery-content .four {
+    grid-column: 12/ 13;
+    grid-row: 5/9;
+    background: #7c7c7b; }
+  .gallery-content .five {
+    grid-column: 1/ 12;
+    grid-row: 6/9;
+    background-image: url(https://images.unsplash.com/photo-1546177461-79dfec0b0928?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1267&q=80);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat; }
+  .gallery-content .six {
+    grid-column: 1/ 13;
+    grid-row: 9/10;
+    padding: 1rem; }
+  .gallery-content .seven {
+    grid-column: 1/13;
+    grid-row: 10/12;
+    background-image: url(https://images.unsplash.com/photo-1511389290465-d11bafd4c1df?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat; }
+  .gallery-content footer {
+    grid-column: 1/13;
+    grid-row: 12/13;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 3rem; }
+
+@media (max-width: 46rem) {
+  .gallery-content {
+    grid-template-columns: repeat(1, 1fr);
+    grid-gap: 10px;
+    grid-template-areas: "title title" "nav nav " "two two" "one one " "three three" "four four" "five five" "six six" "seven seven" "footer footer"; }
+    .gallery-content .title {
+      grid-area: title; }
+    .gallery-content nav {
+      grid-area: nav; }
+    .gallery-content .one {
+      grid-area: one; }
+    .gallery-content .two {
+      grid-area: two; }
+    .gallery-content .three {
+      grid-area: three; }
+    .gallery-content .four {
+      grid-area: four; }
+    .gallery-content .five {
+      grid-area: five; }
+    .gallery-content .six {
+      grid-area: six; }
+    .gallery-content .seven {
+      grid-area: seven; }
+    .gallery-content .footer {
+      grid-area: footer; } }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; }
+
+body {
+  font-family: "Josefin Sans", sans-serif; }
+
+.content {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  max-width: 960px;
+  grid-gap: 2rem;
+  margin: 0 auto;
+  grid-template-areas: "banner banner banner banner banner banner banner banner banner banner banner banner " "title title title title title title title title title title title title " "nav nav nav nav nav nav nav nav nav nav nav nav " "aside aside aside aside main main main main main main main main " "aside1 aside1 aside1 aside1 main main main main main main main main" "more-info more-info more-info more-info more-info more-info more-info more-info more-info more-info more-info more-info " "gallery gallery gallery gallery gallery gallery gallery gallery gallery gallery gallery gallery" "footer footer footer footer footer footer footer footer footer footer footer footer"; }
+
+header {
+  grid-area: banner;
+  background-image: url(https://images.unsplash.com/photo-1546177461-68622f53ed0e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1267&q=80);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 300px; }
+
+.title {
+  text-align: center;
+  font-size: 60px;
+  grid-column: 1 / 13;
+  grid-row: 2/3;
+  grid-area: title; }
+
+nav {
+  grid-area: nav;
+  background: white; }
+  nav .nav-list {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 80px;
+    list-style-type: none; }
+    nav .nav-list .nav-item a {
+      text-decoration: none;
+      color: black;
+      cursor: pointer; }
+
+main {
+  grid-area: main;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; }
+  main h3 {
+    margin-bottom: 10px; }
+  main p {
+    text-align: justify;
+    margin: 10px; }
+
+aside.aside {
+  grid-area: aside;
+  height: 12.5rem;
+  background-image: url(https://images.unsplash.com/photo-1529087795572-98e214aeeb79?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat; }
+
+aside.aside1 {
+  grid-area: aside1;
+  height: 12.5rem;
+  background-image: url(https://images.unsplash.com/photo-1534567530725-05bc2b9ee332?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat; }
+
+.more-info {
+  grid-area: more-info;
+  padding: 1.5rem;
+  margin-bottom: 3rem; }
+  .more-info p {
+    text-align: justify; }
+
+section {
+  grid-area: gallery;
+  margin: 0 auto; }
+  section h3 {
+    text-align: center;
+    margin-bottom: 2rem; }
+
+.inner-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 2rem; }
+  .inner-grid img {
+    height: 130px;
+    width: auto;
+    box-shadow: 1px 1px 6px black; }
+
+footer {
+  grid-area: footer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 3rem; }
+
+@media (max-width: 70rem) {
+  .content {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 960px;
+    grid-gap: 2rem;
+    margin: 0 auto;
+    grid-template-areas: "banner banner  " "title title  " "nav nav " "aside aside " "main main " "aside1 aside1  " "more-info more-info  " "gallery gallery " "footer footer "; }
+
+  .main h3 {
+    text-align: center; }
+
+  aside.aside {
+    height: 300px;
+    background-position: bottom; }
+
+  aside.aside1 {
+    height: 400px;
+    background-position: center; }
+
+  .inner-grid {
+    grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 24rem) {
+  .main h3 {
+    text-align: center; }
+
+  .inner-grid {
+    grid-template-columns: 1fr; } }
+
+/*# sourceMappingURL=master.css.map */

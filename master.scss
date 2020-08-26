@@ -1,0 +1,204 @@
+@import "./css/_about.scss";
+@import "./css/_gallery.scss";
+
+$aside-img-height: 12.5rem;
+$grid-gap-base: 2rem;
+$margin-base: 10px;
+$padding-base: 1.5rem;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Josefin Sans", sans-serif;
+}
+
+.content {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  max-width: 960px;
+  grid-gap: $grid-gap-base;
+  margin: 0 auto;
+
+  grid-template-areas:
+    "banner banner banner banner banner banner banner banner banner banner banner banner "
+    "title title title title title title title title title title title title "
+    "nav nav nav nav nav nav nav nav nav nav nav nav "
+    "aside aside aside aside main main main main main main main main "
+    "aside1 aside1 aside1 aside1 main main main main main main main main"
+    "more-info more-info more-info more-info more-info more-info more-info more-info more-info more-info more-info more-info "
+    "gallery gallery gallery gallery gallery gallery gallery gallery gallery gallery gallery gallery"
+    "footer footer footer footer footer footer footer footer footer footer footer footer";
+}
+
+header {
+  grid-area: banner;
+
+  background: {
+    image: url(https://images.unsplash.com/photo-1546177461-68622f53ed0e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1267&q=80);
+    size: cover;
+    position: center;
+    repeat: no-repeat;
+  }
+
+  height: 300px;
+}
+
+.title {
+  text-align: center;
+  font-size: 60px;
+  grid-column: 1 / 13;
+  grid-row: 2/3;
+  grid-area: title;
+}
+
+nav {
+  grid-area: nav;
+  background: white;
+
+  .nav-list {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 80px;
+    list-style-type: none;
+
+    .nav-item a {
+      text-decoration: none;
+      color: black;
+      cursor: pointer;
+    }
+  }
+}
+
+main {
+  grid-area: main;
+
+  padding: $padding-base;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  h3 {
+    margin-bottom: $margin-base;
+  }
+
+  p {
+    text-align: justify;
+    margin: $margin-base;
+  }
+}
+
+aside.aside {
+  grid-area: aside;
+  height: $aside-img-height;
+
+  background: {
+    image: url(https://images.unsplash.com/photo-1529087795572-98e214aeeb79?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80);
+    size: cover;
+    position: center;
+    repeat: no-repeat;
+  }
+}
+aside.aside1 {
+  grid-area: aside1;
+  height: $aside-img-height;
+
+  background: {
+    image: url(https://images.unsplash.com/photo-1534567530725-05bc2b9ee332?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80);
+    size: cover;
+    position: center;
+    repeat: no-repeat;
+  }
+}
+
+.more-info {
+  grid-area: more-info;
+  padding: $padding-base;
+  margin-bottom: 3rem;
+
+  p {
+    text-align: justify;
+  }
+}
+
+section {
+  grid-area: gallery;
+  margin: 0 auto;
+
+  h3 {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+}
+
+.inner-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: $grid-gap-base;
+
+  img {
+    height: 130px;
+    width: auto;
+    box-shadow: 1px 1px 6px black;
+  }
+}
+
+footer {
+  grid-area: footer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 3rem;
+}
+
+@media (max-width: 70rem) {
+  .content {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 960px;
+    grid-gap: 2rem;
+    margin: 0 auto;
+    grid-template-areas:
+      "banner banner  "
+      "title title  "
+      "nav nav "
+      "aside aside "
+      "main main "
+      "aside1 aside1  "
+      "more-info more-info  "
+      "gallery gallery "
+      "footer footer ";
+  }
+  .main {
+    h3 {
+      text-align: center;
+    }
+  }
+
+  aside.aside {
+    height: 300px;
+    background-position: bottom;
+  }
+  aside.aside1 {
+    height: 400px;
+    background-position: center;
+  }
+  .inner-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 24rem) {
+  .main {
+    h3 {
+      text-align: center;
+    }
+  }
+  .inner-grid {
+    grid-template-columns: 1fr;
+  }
+}
